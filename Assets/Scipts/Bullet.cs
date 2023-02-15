@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     Timer timer;
 
     // magnitude support
-    const float Magnitude = 50f;
+    const float Magnitude = 20f;
     // Start is called before the first frame update
     void Start()
     {

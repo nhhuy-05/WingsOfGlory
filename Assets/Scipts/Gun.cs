@@ -15,7 +15,9 @@ public class Gun : MonoBehaviour
     const float RotateDegreesPerSecond = 60f;
 
     // time to fire
-    
+    const float nextFire = 0.0f;
+    float nextFireTime = 0f;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -39,8 +41,9 @@ public class Gun : MonoBehaviour
             }
             transform.Rotate(Vector3.forward, rotationAmount);
         }
+        nextFireTime += Time.deltaTime;
         // check for fire input
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && nextFireTime > nextFire)
         {
             // create bullet
             GameObject bullet = Instantiate(bulletPrefab) as GameObject;
@@ -50,6 +53,7 @@ public class Gun : MonoBehaviour
             Vector3 direction = transform.rotation * Vector3.up;
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             bulletScript.ApplyForce(direction);
+            nextFireTime = 0f;
         }
     }
 }

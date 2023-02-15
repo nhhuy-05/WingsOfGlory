@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342aa1d5f44f24a4a8bf6f2828455598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabExplosion: {fileID: 2631738133892068523, guid: b0507bd7f0f744e4e93bf1b91419e247, type: 3}
   healthBar: {fileID: 815056620228879191}
 --- !u!1 &7180753256592562655
 GameObject:

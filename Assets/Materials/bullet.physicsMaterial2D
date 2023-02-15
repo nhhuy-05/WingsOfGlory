@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: metal
-  friction: 0.5
-  bounciness: 0.5
+  m_Name: bullet
+  friction: 1
+  bounciness: 1

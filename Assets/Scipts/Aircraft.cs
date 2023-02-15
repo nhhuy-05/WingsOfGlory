@@ -7,6 +7,9 @@ using UnityEngine;
 /// </summary>
 public class Aircraft : MonoBehaviour
 {
+    // field explosion
+    [SerializeField]
+    GameObject prefabExplosion;
     // health support
     int maxHealth = 100;
     int currentHealth;
@@ -30,6 +33,8 @@ public class Aircraft : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // keep the aircraft don't rotate after collision with bullet
+        transform.rotation = Quaternion.identity;
         // keep health bar don't rotate with sprite
         healthBar.transform.rotation = Quaternion.identity;
         healthBar.transform.position = transform.position + new Vector3(0, 0.75f, 0);
@@ -40,13 +45,14 @@ public class Aircraft : MonoBehaviour
         // check for collision with bullet
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            TakeDamage(5);
+            TakeDamage(50);
             if (currentHealth <= 0)
             {
                 // destroy aircraft
                 Destroy(gameObject);
                 // create explosion
-                // Instantiate(prefabExplosion, transform.position, Quaternion.identity);
+                Instantiate(prefabExplosion, transform.position, Quaternion.identity);
+                AudioManager.Play(AudioClipName.Explosion);
             }
             // destroy bullet
             Destroy(collision.gameObject);

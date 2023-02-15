@@ -27,6 +27,9 @@ public class Helicopter : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // keep the helicopter don't rotate after collision with bullet
+        transform.rotation = Quaternion.identity;
+        
         // keep health bar don't rotate with sprite
         healthBar.transform.rotation = Quaternion.identity;
         healthBar.transform.position = transform.position + new Vector3(0, 0.75f, 0);

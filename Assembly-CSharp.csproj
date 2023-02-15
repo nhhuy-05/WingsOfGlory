@@ -66,6 +66,10 @@
     <Compile Include="Assets\Scipts\Bullet.cs" />
     <Compile Include="Assets\Scipts\Gun.cs" />
     <Compile Include="Assets\Scipts\Aircraft.cs" />
+    <Compile Include="Assets\Scipts\AudioClipName.cs" />
+    <Compile Include="Assets\Scipts\AudioManager.cs" />
+    <Compile Include="Assets\Scipts\GameAudioSource.cs" />
+    <Compile Include="Assets\Scipts\Explosion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
